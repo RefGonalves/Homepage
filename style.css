@@ -5,43 +5,6 @@
     --secondary-color: #cc2e97;
     --tertiary-color: rgba(204, 46, 151, .2);
     --highlight-color: #e4b0db;
-
-/* CORES DE CADA DIA
-    DOMINGO
-    --test2: #cc2e97;
-    --test3: rgba(204, 46, 151, .2);
-    --test4: #e4b0db;
-
-    SEGUNDA
-    --test2: #9d00bd;
-    --test3: rgba(157, 0, 189, .2);
-    --test4: #f3b7ff;
-    
-    TERÇA
-    --test2: #0062bd;
-    --test3: rgba(0, 89, 189, .2);
-    --test4: #b7dcff;
-    
-    QUARTA
-    --test2: #00bd3f;
-    --test3: rgba(0, 189, 63, .2);
-    --test4: #b7ffbd;
-    
-    QUINTA
-    --test2: #ddbf39;
-    --test3: rgba(221, 191, 57, .2);
-    --test4: #fff4b7;
-    
-    SEXTA
-    --test2: #dd6839;
-    --test3: rgba(221, 104, 57, .2);
-    --test4: #ffcbb7;
-
-    SABADO 
-    --test2: #ff2626;
-    --test3: rgba(255, 38, 38, 0.2);
-    --test4: #ffb7b7; 
-*/
     
 }
 
@@ -131,15 +94,15 @@ header #phrase {
     display: flex;
     flex-direction: column;
     flex: 1;
-    justify-content: top;
     border-left: 1px solid var(--secondary-color);
     padding-left: 3rem;
+    justify-content: center;
 }
 
 #time {
     font-size: 42pt;
     color: var(--secondary-color);
-    line-height: 100%;
+    line-height: 80%;
     width: 12rem;
 
 }
@@ -270,16 +233,19 @@ main {
         font-size: 48pt !important;
         width: 12rem !important;
         height: 3.5rem;
-
     }
     #day {
         font-size: 12pt !important;
     }
     #header-text {
-        align-items: center;
         border-left: none;
-        padding-left: 0;
+        padding-left: 1rem;
+        gap: .5rem;
     }
+    header #phrase {
+        display: none;
+    }
+
     header {
         width: 100%;
         height: fit-content;
