@@ -26,97 +26,135 @@
         </div>
     </header>
     <main>
-        <div id="tab-buttons">
-            <button class="tab-button" id="design-button" onmouseover="switchTab('design')">
-                <p >DESIGN</p>
-                <i style="display: none;" class="nf nf-fa-pencil tab-icon"></i>
-            </button>
-            <button class="tab-button" id="social-button" onmouseover="switchTab('social')">
+        <div id="links-tab" style="display:none;">
+            <div id="tab-buttons">
+                <button class="tab-button" id="design-button" onmouseover="switchTab('design')">
+                    <p >DESIGN</p>
+                    <i style="display: none;" class="nf nf-fa-pencil tab-icon"></i>
+                </button>
+                <button class="tab-button" id="social-button" onmouseover="switchTab('social')">
+                    <p>SOCIAL</p>
+                    <i style="display: none;" class="nf nf-md-chat_processing tab-icon"></i>
+                </button>
+                <button class="tab-button" id="entertainment-button" onmouseover="switchTab('entertainment')">
+                    <p>ENTRETENIMENTO</p>
+                    <i style="display: none;" class="nf nf-md-music_note tab-icon"></i>
+                </button>
+                <button class="tab-button" id="coding-button" onmouseover="switchTab('coding')">
+                    <p>CÓDIGO</p>
+                    <i style="display: none;" class="nf nf-oct-code tab-icon"></i>
+                </button>
+            </div>
+            <!-- DESIGN LINKS -->
+            <div id="design-links" class="link-row">
+                <p>DESIGN</p>
+                <div class="links">
+                    <a title="Suap" class="link-button" id="suap" href="https://suap.ifsul.edu.br/">
+                        <i class="nf nf-md-school"></i> Suap
+                    </a>
+                    <a title="Figma" class="link-button" id="figma" href="https://figma.com/">
+                        <i class="nf nf-fa-figma"></i> Figma
+                    </a>
+                    <a title="Trello" class="link-button" id="trello" href="https://trello.com/">
+                        <i class="nf nf-fa-trello"></i> Trello
+                    </a>
+                    <a title="Google Drive" class="link-button" id="drive" href="https://drive.google.com/drive/u/0/my-drive">
+                        <i class="nf nf-fa-google_drive"></i> Google Drive
+                    </a>
+                    <a title="Google Fonts" class="link-button" id="fonts" href="https://fonts.google.com/">
+                        <i class="nf nf-fa-font"></i> Google Fonts
+                    </a>
+                    <a title="WhatFontIs" class="link-button" id="whatfontis" href="https://whatfontis.com/">
+                        <i class="nf nf-seti-font"></i> What Font Is
+                    </a>
+                </div>
+            </div>
+            <!-- SOCIAL LINKS -->
+            <div id="social-links" class="link-row" style="display: none;">
                 <p>SOCIAL</p>
-                <i style="display: none;" class="nf nf-md-chat_processing tab-icon"></i>
-            </button>
-            <button class="tab-button" id="entertainment-button" onmouseover="switchTab('entertainment')">
-                <p>ENTRETENIMENTO</p>
-                <i style="display: none;" class="nf nf-md-music_note tab-icon"></i>
-            </button>
-            <button class="tab-button" id="coding-button" onmouseover="switchTab('coding')">
-                <p>CÓDIGO</p>
-                <i style="display: none;" class="nf nf-oct-code tab-icon"></i>
-            </button>
-        </div>
-        <!-- DESIGN LINKS -->
-        <div id="design-links" class="link-row">
-            <p>DESIGN</p>
-            <div class="links">
-                <a title="Suap" class="link-button" id="suap" href="https://suap.ifsul.edu.br/">
-                    <i class="nf nf-md-school"></i> Suap
-                </a>
-                <a title="Figma" class="link-button" id="figma" href="https://figma.com/">
-                    <i class="nf nf-fa-figma"></i> Figma
-                </a>
-                <a title="Trello" class="link-button" id="trello" href="https://trello.com/">
-                    <i class="nf nf-fa-trello"></i> Trello
-                </a>
-                <a title="Google Drive" class="link-button" id="drive" href="https://drive.google.com/drive/u/0/my-drive">
-                    <i class="nf nf-fa-google_drive"></i> Google Drive
-                </a>
-                <a title="Google Fonts" class="link-button" id="fonts" href="https://fonts.google.com/">
-                    <i class="nf nf-fa-font"></i> Google Fonts
-                </a>
-                <a title="WhatFontIs" class="link-button" id="whatfontis" href="https://whatfontis.com/">
-                    <i class="nf nf-seti-font"></i> What Font Is
-                </a>
+                <div class="links">
+                    <a title="Gmail" class="link-button" id="gmail" href="https://mail.google.com/mail/u/0/#inbox">
+                        <i class="nf nf-md-gmail"></i> Gmail
+                    </a>
+                    <a title="Whatsapp" class="link-button" id="whatsapp" href="https://web.whatsapp.com/">
+                        <i class="nf nf-fa-whatsapp"></i> Whatsapp
+                    </a>
+                    <a title="Telegram" class="link-button" id="telegram" href="https://web.telegram.org/a/">
+                        <i class="nf nf-fa-telegram"></i> Telegram
+                    </a>
+                    <a title="Discord" class="link-button" id="discord" href="https://discord.com/channels/@me">
+                        <i class="nf nf-fa-discord"></i> Discord
+                    </a>
+                </div>
+            </div>
+            <!-- ENTERTAINMENT THINGS -->
+            <div id="entertainment-links" class="link-row" style="display: none;">
+                <p>ENTERTAINMENT</p>
+                <div class="links">
+                    <a title="Youtube" class="link-button" id="youtube" href="https://youtube.com/">
+                        <i class="nf nf-fa-youtube"></i> Youtube
+                    </a>
+                    <a title="Reddit" class="link-button" id="reddit" href="https://reddit.com/">
+                        <i class="nf nf-fa-reddit"></i> Reddit
+                    </a>
+                    <a title="Pokérogue" class="link-button" id="pokerogue" href="https://reddit.com/">
+                        <i class="nf nf-md-pokeball"></i> Pokérogue
+                    </a>
+                </div>
+            </div>
+            <!-- CODING THINGS -->
+            <div id="coding-links" class="link-row" style="display: none;">
+                <p>CODING</p>
+                <div class="links">
+                    <a title="Github" class="link-button" id="github" href="https://github.com/">
+                        <i class="nf nf-fa-github"></i> Github
+                    </a>
+                    <a title="Nerdfonts" class="link-button" id="nerdfonts" href="https://nerdfonts.com/">
+                        <i class="nf nf-md-glasses"></i> Nerdfonts
+                    </a>
+                    <a title="GPT" class="link-button" id="gpt" href="https://chat.openai.com/">
+                        <i class="nf nf-md-chat_question"></i> GPT
+                    </a>
+                </div>
             </div>
         </div>
-        <!-- SOCIAL LINKS -->
-        <div id="social-links" class="link-row" style="display: none;">
-            <p>SOCIAL</p>
-            <div class="links">
-                <a title="Gmail" class="link-button" id="gmail" href="https://mail.google.com/mail/u/0/#inbox">
-                    <i class="nf nf-md-gmail"></i> Gmail
-                </a>
-                <a title="Whatsapp" class="link-button" id="whatsapp" href="https://web.whatsapp.com/">
-                    <i class="nf nf-fa-whatsapp"></i> Whatsapp
-                </a>
-                <a title="Telegram" class="link-button" id="telegram" href="https://web.telegram.org/a/">
-                    <i class="nf nf-fa-telegram"></i> Telegram
-                </a>
-                <a title="Discord" class="link-button" id="discord" href="https://discord.com/channels/@me">
-                    <i class="nf nf-fa-discord"></i> Discord
-                </a>
+        <div id="tasks-tab">
+            <div id="uncompleted-tasks" class="task-column">
+                <div class="title">EM PROGRESSO</div>
+                <div id="uncompleted-task-list" class="task-list"></div>
             </div>
-        </div>
-        <!-- ENTERTAINMENT THINGS -->
-        <div id="entertainment-links" class="link-row" style="display: none;">
-            <p>ENTERTAINMENT</p>
-            <div class="links">
-                <a title="Youtube" class="link-button" id="youtube" href="https://youtube.com/">
-                    <i class="nf nf-fa-youtube"></i> Youtube
-                </a>
-                <a title="Reddit" class="link-button" id="reddit" href="https://reddit.com/">
-                    <i class="nf nf-fa-reddit"></i> Reddit
-                </a>
-                <a title="Pokérogue" class="link-button" id="pokerogue" href="https://reddit.com/">
-                    <i class="nf nf-md-pokeball"></i> Pokérogue
-                </a>
-            </div>
-        </div>
-        <!-- CODING THINGS -->
-        <div id="coding-links" class="link-row" style="display: none;">
-            <p>CODING</p>
-            <div class="links">
-                <a title="Github" class="link-button" id="github" href="https://github.com/">
-                    <i class="nf nf-fa-github"></i> Github
-                </a>
-                <a title="Nerdfonts" class="link-button" id="nerdfonts" href="https://nerdfonts.com/">
-                    <i class="nf nf-md-glasses"></i> Nerdfonts
-                </a>
-                <a title="GPT" class="link-button" id="gpt" href="https://chat.openai.com/">
-                    <i class="nf nf-md-chat_question"></i> GPT
-                </a>
+            <div id="completed-tasks" class="task-column">
+                <div class="title">CONCLUÍDAS</div>
+                <div id="completed-task-list" class="task-list"></div>
             </div>
         </div>
     </main>
+    <div id="floating-buttons">
+        <button id="toggle-tabs-btn" class="floating-btn">
+            <i class="nf nf-md-toggle_switch"></i>
+        </button>
+        <button id="new-task-btn" class="floating-btn">
+            <i class="nf nf-fa-plus"></i>
+        </button>
+    </div>
+    <div id="new-task-overlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <p>Task</p>
+            <input type="text" id="new-task-name" maxlength="48" placeholder="Task name..." autocomplete="off">
+            <textarea id="new-task-desc" maxlength="280" placeholder="Task description..." autocomplete="off"></textarea>
+            <div class="new-task-buttons">
+                <button id="add-task-btn">Confirm</button>
+                <button id="close-overlay-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div id="task-detail-overlay" class="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h2 id="overlay-task-name">Task Name</h2>
+            <p id="overlay-task-desc">Task description goes here.</p>
+            <button id="close-task-overlay-btn">Close</button>
+        </div>
+    </div>
     <script type="text/javascript" src="script.js" defer></script>
 </body>
 </html>

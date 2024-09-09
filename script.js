@@ -133,3 +133,172 @@ function switchTab(tabId) {
         selectedRow.style.display = 'flex';
     }
 }
+
+
+// TASKS FUNCTIONS
+
+// Utility functions for localStorage
+const getTasksFromStorage = () => {
+    const tasks = localStorage.getItem('tasks');
+    return tasks ? JSON.parse(tasks) : [];
+};
+
+const saveTasksToStorage = (tasks) => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+};
+
+// Render tasks in the appropriate columns
+const renderTasks = () => {
+    const uncompletedTaskList = document.getElementById('uncompleted-task-list');
+    const completedTaskList = document.getElementById('completed-task-list');
+    
+    uncompletedTaskList.innerHTML = '';
+    completedTaskList.innerHTML = '';
+
+    const tasks = getTasksFromStorage();
+    
+    tasks.forEach((task, index) => {
+        const taskElement = createTaskElement(task, index);
+        if (task.completed) {
+            completedTaskList.appendChild(taskElement);
+        } else {
+            uncompletedTaskList.appendChild(taskElement);
+        }
+    });
+};
+
+// Create a task element
+const createTaskElement = (task, index) => {
+    const taskDiv = document.createElement('div');
+    taskDiv.classList.add('task');
+    
+    const taskStatusDiv = document.createElement('div');
+    taskStatusDiv.classList.add('task-status');
+
+    const taskCheckbox = document.createElement('input');
+    taskCheckbox.type = 'checkbox';
+    taskCheckbox.checked = task.completed;
+    taskCheckbox.addEventListener('change', () => toggleTaskCompletion(index));
+
+    taskStatusDiv.appendChild(taskCheckbox);
+
+    const taskTextDiv = document.createElement('div');
+    taskTextDiv.classList.add('task-text');
+
+    const taskNameDiv = document.createElement('div');
+    taskNameDiv.classList.add('task-name');
+    taskNameDiv.textContent = task.name;
+
+    const viewDetailsButton = document.createElement('button');
+    const iconDetailsButton = document.createElement('i');
+    iconDetailsButton.classList.add('nf');
+    iconDetailsButton.classList.add('nf-fa-plus');
+    viewDetailsButton.appendChild(iconDetailsButton);
+    viewDetailsButton.addEventListener('click', () => openTaskDetailOverlay(task));
+
+    taskTextDiv.appendChild(taskNameDiv);
+    taskTextDiv.appendChild(viewDetailsButton);
+
+    taskDiv.appendChild(taskStatusDiv);
+    taskDiv.appendChild(taskTextDiv);
+
+    return taskDiv;
+};
+
+// Toggle task completion status
+const toggleTaskCompletion = (taskIndex) => {
+    const tasks = getTasksFromStorage();
+    tasks[taskIndex].completed = !tasks[taskIndex].completed;
+    saveTasksToStorage(tasks);
+    renderTasks();
+};
+
+// Initial task data (if no tasks exist in localStorage)
+const initializeTasks = () => {
+    const tasks = getTasksFromStorage();
+    if (tasks.length === 0) {
+        const sampleTasks = [
+            { name: "Lorem ipsum dolor", description: "Sit amet consectetur adipisicing elit", completed: false },
+            { name: "Task 2", description: "Nemo, quaerat.", completed: false },
+            { name: "Task 3", description: "Completed task example", completed: true }
+        ];
+        saveTasksToStorage(sampleTasks);
+    }
+};
+
+// FLOATING BUTTONS
+
+document.getElementById('toggle-tabs-btn').addEventListener('click', () => {
+    const tasksTab = document.getElementById('tasks-tab');
+    const linksTab = document.getElementById('links-tab');
+
+    if (tasksTab.style.display === 'none') {
+        tasksTab.style.display = 'flex';
+        linksTab.style.display = 'none';
+    } else {
+        tasksTab.style.display = 'none';
+        linksTab.style.display = 'block';
+    }
+});
+
+// ADDING TASKS
+
+// Show overlay for creating a new task
+document.getElementById('new-task-btn').addEventListener('click', () => {
+    const tasksTab = document.getElementById('tasks-tab');
+    if (tasksTab.style.display === 'none') {
+        // Show tasks-tab if not visible
+        tasksTab.style.display = 'flex';
+        document.getElementById('links-tab').style.display = 'none';
+    }
+    
+    // Show overlay
+    document.getElementById('new-task-overlay').style.display = 'flex';
+});
+
+// Close the overlay
+document.getElementById('close-overlay-btn').addEventListener('click', () => {
+    document.getElementById('new-task-name').value = '';
+    document.getElementById('new-task-desc').value = '';
+    document.getElementById('new-task-overlay').style.display = 'none';
+});
+
+// Add new task
+document.getElementById('add-task-btn').addEventListener('click', () => {
+    const taskName = document.getElementById('new-task-name').value;
+    const taskDesc = document.getElementById('new-task-desc').value;
+
+    if (taskName && taskDesc) {
+        const tasks = getTasksFromStorage();
+        tasks.push({ name: taskName, description: taskDesc, completed: false });
+        saveTasksToStorage(tasks);
+        renderTasks();
+
+        // Close overlay and clear input fields
+        document.getElementById('new-task-name').value = '';
+        document.getElementById('new-task-desc').value = '';
+        document.getElementById('new-task-overlay').style.display = 'none';
+    } else {
+        alert('Please fill in both fields!');
+    }
+});
+
+// Open the overlay with task details
+const openTaskDetailOverlay = (task) => {
+    document.getElementById('overlay-task-name').textContent = task.name;
+    document.getElementById('overlay-task-desc').textContent = task.description;
+    document.getElementById('task-detail-overlay').style.display = 'flex';
+};
+
+// Close the task detail overlay
+document.getElementById('close-task-overlay-btn').addEventListener('click', () => {
+    document.getElementById('task-detail-overlay').style.display = 'none';
+});
+
+
+// Initialize page
+window.onload = () => {
+    initializeTasks();
+    renderTasks();
+};
+
