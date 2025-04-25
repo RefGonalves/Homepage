@@ -26,7 +26,7 @@
         </div>
     </header>
     <main>
-        <div id="links-tab">
+        <div id="links-tab" class="tab">
             <div id="tab-buttons">
                 <button class="tab-button" id="design-button" onmouseover="switchTab('design')">
                     <p >DESIGN</p>
@@ -40,13 +40,13 @@
                     <p>ENTRETENIMENTO</p>
                     <i style="display: none;" class="nf nf-md-music_note tab-icon"></i>
                 </button>
-                <button class="tab-button" id="coding-button" onmouseover="switchTab('nerd')">
+                <button class="tab-button" id="nerd-button" onmouseover="switchTab('nerd')">
                     <p>NERD</p>
                     <i style="display: none;" class="nf nf-oct-code tab-icon"></i>
                 </button>
             </div>
             <!-- DESIGN LINKS -->
-            <div id="design-links" class="link-row">
+            <div id="design-tab" class="link-row" style="display: none;">
                 <p>DESIGN</p>
                 <div class="links">
                     <a title="Suap" class="link-button" id="suap" href="https://suap.ifsul.edu.br/">
@@ -70,7 +70,7 @@
                 </div>
             </div>
             <!-- SOCIAL LINKS -->
-            <div id="social-links" class="link-row" style="display: none;">
+            <div id="social-tab" class="link-row" style="display: none;">
                 <p>SOCIAL</p>
                 <div class="links">
                     <a title="Gmail" class="link-button" id="gmail" href="https://mail.google.com/mail/u/0/#inbox">
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <!-- ENTERTAINMENT THINGS -->
-            <div id="entertainment-links" class="link-row" style="display: none;">
+            <div id="entertainment-tab" class="link-row" style="display: none;">
                 <p>ENTERTAINMENT</p>
                 <div class="links">
                     <a title="Youtube" class="link-button" id="youtube" href="https://youtube.com/">
@@ -97,16 +97,13 @@
                     <a title="Reddit" class="link-button" id="reddit" href="https://reddit.com/">
                         <i class="nf nf-fa-reddit"></i> Reddit
                     </a>
-                    <a title="Pokérogue" class="link-button" id="pokerogue" href="https://reddit.com/">
-                        <i class="nf nf-md-pokeball"></i> Pokérogue
-                    </a>
                     <a title="Coub" class="link-button" id="coub" href="https://coub.com/">
                         <i class="nf nf-fa-video"></i> Coub
                     </a>
                 </div>
             </div>
             <!-- NERD THINGS -->
-            <div id="nerd-links" class="link-row" style="display: none;">
+            <div id="nerd-tab" class="link-row" style="display: none;">
                 <p>NERD</p>
                 <div class="links">
                     <a title="Github" class="link-button" id="github" href="https://github.com/">
@@ -127,43 +124,21 @@
                 </div>
             </div>
         </div>
-        <div id="tasks-tab" style="display:none;">
-            <div id="uncompleted-tasks" class="task-column">
-                <div class="title">EM PROGRESSO</div>
-                <div id="uncompleted-task-list" class="task-list"></div>
+            <!-- CLASS SCHEDULE -->
+            <div id="schedule-tab" class="tab" style="display: none;">
+                Oi
             </div>
-            <div id="completed-tasks" class="task-column">
-                <div class="title">CONCLUÍDAS</div>
-                <div id="completed-task-list" class="task-list"></div>
-            </div>
-        </div>
     </main>
-    <div id="floating-buttons">
-        <button id="toggle-tabs-btn" class="floating-btn">
-            <i class="nf nf-md-toggle_switch"></i>
-        </button>
-        <button id="new-task-btn" class="floating-btn">
-            <i class="nf nf-fa-plus"></i>
-        </button>
-    </div>
-    <div id="new-task-overlay" class="overlay" style="display: none;">
-        <div class="overlay-content">
-            <p>Task</p>
-            <input type="text" id="new-task-name" maxlength="48" placeholder="Task name..." autocomplete="off">
-            <textarea id="new-task-desc" maxlength="280" placeholder="Task description..." autocomplete="off"></textarea>
-            <div class="new-task-buttons">
-                <button id="add-task-btn">Confirm</button>
-                <button id="close-overlay-btn">Cancel</button>
+    <footer id="session-buttons">
+            <div id="links-button" class="session-button" onmouseover="switchSession('links')">
+                <i class="nf nf-md-web session-icon"></i>
+                <p>Links</p>
             </div>
-        </div>
-    </div>
-    <div id="task-detail-overlay" class="overlay" style="display: none;">
-        <div class="overlay-content">
-            <h2 id="overlay-task-name">Task Name</h2>
-            <p id="overlay-task-desc">Task description goes here.</p>
-            <button id="close-task-overlay-btn">Close</button>
-        </div>
-    </div>
+            <div id="schedule-button" class="session-button" onmouseover="switchSession('schedule')">
+                <i class="nf nf-fa-hourglass session-icon"></i>
+                <p>Schedule</p>
+            </div>
+    </footer>
     <script type="text/javascript" src="script.js" defer></script>
 </body>
 </html>

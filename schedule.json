@@ -1,0 +1,44 @@
+[
+    {
+      "dia": "segunda",
+      "horario": "19:00-22:20",
+      "disciplina": "Algorítmos e Computadores",
+      "sala": "Sala 304",
+      "professor": "Paulo Ferreira"
+    },
+    {
+      "dia": "terca",
+      "horario": "19:00-22:20",
+      "disciplina": "Fundamentos da Linguagem Visual 1",
+      "sala": "Sala 202",
+      "professor": "Ana Penkala"
+    },
+    {
+      "dia": "quarta",
+      "horario": "19:00-20:40",
+      "disciplina": "Design de Personagens 1",
+      "sala": "Sala 306",
+      "professor": "Mônica de Faria"
+    },
+    {
+      "dia": "quarta",
+      "horario": "20:40-22:20",
+      "disciplina": "Roteiro para Jogos e Games",
+      "sala": "Sala 306",
+      "professor": "Mônica de Faria"
+    },
+    {
+      "dia": "quinta",
+      "horario": "19:00-22:20",
+      "disciplina": "Introdução à Animação",
+      "sala": "Sala 303",
+      "professor": "Davi Denardi"
+    },
+    {
+      "dia": "sexta",
+      "horario": "19:00-22:20",
+      "disciplina": "Game Design 1",
+      "sala": "Sala 303",
+      "professor": "Bernardo Aguiar"
+    }
+  ]
