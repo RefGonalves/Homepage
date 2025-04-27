@@ -3,285 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Welcome</title>
     <style>
         @import "https://www.nerdfonts.com/assets/css/webfont.css";
     </style>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="/src/Corinthians.ico">
+    <link rel="stylesheet" href="temp-style.css">
 </head>
 <body>
-    <header>
-        <div id="cool-pics"><img src="src/capy-funny2.gif" alt="cool-pic"></div>        
-        <div id="phrase">
-            <p>
-                Um jaguara só é um jaguara quando ele jaguareia outro jaguara.
-                <b>- Ref, 2024</b>
-            </p>
-            
-        </div>
-        <div id="header-text">
-            <h1 id="time">14:00</h1>
-            <div id="day">quarta-feira, 14 de fevereiro de 2024</div>
-        </div>
-    </header>
-    <main>
-        <div id="links-tab" class="tab">
-            <div id="tab-buttons">
-                <button class="tab-button" id="design-button" onmouseover="switchTab('design')">
-                    <p >DESIGN</p>
-                    <i style="display: none;" class="nf nf-fa-pencil tab-icon"></i>
-                </button>
-                <button class="tab-button" id="social-button" onmouseover="switchTab('social')">
-                    <p>SOCIAL</p>
-                    <i style="display: none;" class="nf nf-md-chat_processing tab-icon"></i>
-                </button>
-                <button class="tab-button" id="entertainment-button" onmouseover="switchTab('entertainment')">
-                    <p>ENTRETENIMENTO</p>
-                    <i style="display: none;" class="nf nf-md-music_note tab-icon"></i>
-                </button>
-                <button class="tab-button" id="nerd-button" onmouseover="switchTab('nerd')">
-                    <p>NERD</p>
-                    <i style="display: none;" class="nf nf-oct-code tab-icon"></i>
-                </button>
+    <main id="welcome-window">
+        <div id="welcome-header">
+            <div id="cremoso-text">
+                É muuito cremoso...
             </div>
-            <!-- DESIGN LINKS -->
-            <div id="design-tab" class="link-row" style="display: none;">
-                <p>DESIGN</p>
-                <div class="links">
-                    <a title="Suap" class="link-button" id="suap" href="https://suap.ifsul.edu.br/">
-                        <i class="nf nf-md-school"></i> Suap
-                    </a>
-                    <a title="Figma" class="link-button" id="figma" href="https://figma.com/">
-                        <i class="nf nf-fa-figma"></i> Figma
-                    </a>
-                    <a title="Trello" class="link-button" id="trello" href="https://trello.com/">
-                        <i class="nf nf-fa-trello"></i> Trello
-                    </a>
-                    <a title="Google Drive" class="link-button" id="drive" href="https://drive.google.com/drive/u/0/my-drive">
-                        <i class="nf nf-fa-google_drive"></i> Google Drive
-                    </a>
-                    <a title="Google Fonts" class="link-button" id="fonts" href="https://fonts.google.com/">
-                        <i class="nf nf-fa-font"></i> Google Fonts
-                    </a>
-                    <a title="WhatFontIs" class="link-button" id="whatfontis" href="https://whatfontis.com/">
-                        <i class="nf nf-seti-font"></i> What Font Is
-                    </a>
-                </div>
+            <div id="subtext">
+                O cachorro é raivoso até colocar a coleira~
             </div>
-            <!-- SOCIAL LINKS -->
-            <div id="social-tab" class="link-row" style="display: none;">
-                <p>SOCIAL</p>
-                <div class="links">
-                    <a title="Gmail" class="link-button" id="gmail" href="https://mail.google.com/mail/u/0/#inbox">
-                        <i class="nf nf-md-gmail"></i> Gmail
-                    </a>
-                    <a title="Whatsapp" class="link-button" id="whatsapp" href="https://web.whatsapp.com/">
-                        <i class="nf nf-fa-whatsapp"></i> Whatsapp
-                    </a>
-                    <a title="Telegram" class="link-button" id="telegram" href="https://web.telegram.org/a/">
-                        <i class="nf nf-fa-telegram"></i> Telegram
-                    </a>
-                    <a title="Discord" class="link-button" id="discord" href="https://discord.com/channels/@me">
-                        <i class="nf nf-fa-discord"></i> Discord
-                    </a>
-                </div>
-            </div>
-            <!-- ENTERTAINMENT THINGS -->
-            <div id="entertainment-tab" class="link-row" style="display: none;">
-                <p>ENTERTAINMENT</p>
-                <div class="links">
-                    <a title="Youtube" class="link-button" id="youtube" href="https://youtube.com/">
-                        <i class="nf nf-fa-youtube"></i> Youtube
-                    </a>
-                    <a title="Reddit" class="link-button" id="reddit" href="https://reddit.com/">
-                        <i class="nf nf-fa-reddit"></i> Reddit
-                    </a>
-                    <a title="Coub" class="link-button" id="coub" href="https://coub.com/">
-                        <i class="nf nf-fa-video"></i> Coub
-                    </a>
-                </div>
-            </div>
-            <!-- NERD THINGS -->
-            <div id="nerd-tab" class="link-row" style="display: none;">
-                <p>NERD</p>
-                <div class="links">
-                    <a title="Github" class="link-button" id="github" href="https://github.com/">
-                        <i class="nf nf-fa-github"></i> Github
-                    </a>
-                    <a title="Nerdfonts" class="link-button" id="nerdfonts" href="https://nerdfonts.com/">
-                        <i class="nf nf-md-glasses"></i> Nerdfonts
-                    </a>
-                    <a title="GPT" class="link-button" id="gpt" href="https://chat.openai.com/">
-                        <i class="nf nf-md-chat_question"></i> GPT
-                    </a>
-                    <a title="Suno" class="link-button" id="suno" href="https://suno.com/">
-                        <i class="nf nf-fa-music"></i> Suno
-                    </a>
-                    <a title="Udio" class="link-button" id="udio" href="https://udio.com/">
-                        <i class="nf nf-md-music_note"></i> Udio
-                    </a>
-                </div>
+            <div id="callout">
+                Vem ser meu cachorrinho?
             </div>
         </div>
-        <!-- CLASS SCHEDULE -->
-        <div id="schedule-tab" class="tab" style="display: none;">
-            <div id="time-of-day" class="column">
-                <div class="row row-0">19:00 - 19:50</div>
-                <div class="row row-1">19:50 - 20:40</div>
-                <div class="row row-2">20:40 - 21:30</div>
-                <div class="row row-3">21:30 - 22:20</div>
-                <div class="row row-4">22:20 - 23:10</div>
-            </div>
-            <div id="subject-columns">
-                <div id="segunda" class="week-day column">
-                    <div class="row row-0 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-1 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-2 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-3 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-4 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                </div>
-                <div id="terca" class="week-day column">
-                    <div class="row row-0 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-1 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-2 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-3 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-4 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                </div>
-                <div id="quarta" class="week-day column">
-                    <div class="row row-0 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-1 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-2 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-3 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-4 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                </div>
-                <div id="quinta" class="week-day column">
-                    <div class="row row-0 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-1 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-2 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-3 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-4 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                </div>
-                <div id="sexta" class="week-day column">
-                    <div class="row row-0 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-1 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-2 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-3 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                    <div class="row row-4 subject">
-                        Matéria
-                        <div class="classroom">Sala 300</div>
-                        <div class="teacher">Professor X</div>
-                    </div>
-                </div>
-            </div>
+        <div id="login-section">
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <label for="username">Nome VIP</label>
+                <input type="text" id="username" autocomplete="off" placeholder="Por favor, dê entrada no seu nome VIP..." required>
+                <label for="password">Senha Especial</label>
+                <input type="password" id="password" autocomplete="off" placeholder="Por favor, dê entrada na sua senha especial..." required>
+                <button id="submit" type="submit">ENTRAR</button>
+            </form>
         </div>
     </main>
-    <footer id="session-buttons">
-            <div id="links-button" class="session-button" onmouseover="switchSession('links')">
-                <i class="nf nf-md-web session-icon"></i>
-                <p>Links</p>
-            </div>
-            <div id="schedule-button" class="session-button" onmouseover="switchSession('schedule')">
-                <i class="nf nf-fa-hourglass session-icon"></i>
-                <p>Schedule</p>
-            </div>
-    </footer>
-    <script type="text/javascript" src="script.js" defer></script>
+    <div id="error" class="error-message" style="display: none;">
+        Você não é bem-vindo aqui. Te dou mais uma chance de se redimir.
+        <button id="close-error" onclick="closeError()">
+            TENTAR UMA ÚLTIMA VEZ
+        </button>
+    </div>
+    <script type="text/javascript" src="temp-script.js" defer></script>
 </body>
 </html>

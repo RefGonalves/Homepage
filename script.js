@@ -1,14 +1,14 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function() {
 
-    switchTab('design'); // Exibe a primeira aba ao carregar a página
+    switchTab('design');
+    switchSession('schedule');
+
 
     // Atualiza a hora e o dia imediatamente ao carregar a página
     updateDateTime();
 
     // Define o gif aleatório
     setRandomGif();
-
-    
 
     // Atualiza o horário e o dia a cada minuto
     setInterval(updateDateTime, 1000);
