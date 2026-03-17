@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function() {
 
     switchTab('design');
-    switchSession('schedule');
 
 
     // Atualiza a hora e o dia imediatamente ao carregar a página
